@@ -1,0 +1,3 @@
+# Keep any future API proxies and specific redirects ABOVE this SPA fallback.
+# No force flag: existing static files and functions retain priority.
+/* /index.html 200
