@@ -19,6 +19,6 @@ export function filterMenu(
   return items.filter(
     (item) =>
       (category === "all" || categoryKey(item) === category) &&
-      normalizeSearch(item.name[language]).includes(q),
+      normalizeSearch([item.name[language], item.name.uz, item.category?.[language] ?? "", item.description?.[language] ?? ""].join(" ")).includes(q),
   );
 }

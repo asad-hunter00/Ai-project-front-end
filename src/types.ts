@@ -12,6 +12,13 @@ export interface Room {
   image?: string;
   published: boolean;
 }
+export interface DishReview {
+  id: string;
+  name: string;
+  text: LocalizedText;
+  rating: number;
+  date: string;
+}
 export interface MenuItem {
   id: string;
   name: LocalizedText;
@@ -19,6 +26,14 @@ export interface MenuItem {
   description?: LocalizedText;
   price?: number;
   portion?: LocalizedText;
+  meat?: LocalizedText;
+  ingredients?: LocalizedText;
+  source?: LocalizedText;
+  quality?: LocalizedText;
+  imageIllustration?: boolean;
+  imageFit?: "cover" | "contain";
+  imageCaption?: LocalizedText;
+  reviews?: DishReview[];
   image?: string;
 }
 export interface GalleryImage {

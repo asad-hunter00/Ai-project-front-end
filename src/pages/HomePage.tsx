@@ -1,3 +1,4 @@
+import { Together, SaladSpotlight, VisitGuide } from "../components/Experience";
 import { Icon, RoomDrawing } from "../components/Icon";
 import {
   Rooms,
@@ -76,10 +77,13 @@ export function HomePage({
           {status === "loading" ? t.loading : t.error}
         </p>
       )}
+      <Together />
       <Rooms rooms={content.rooms} />
       <Menu items={menuItems} />
+      <SaladSpotlight />
       <Gallery images={content.gallery} />
       <Announcements items={content.announcements} />
+      <VisitGuide />
       <FAQ />
       <Contact />
     </>

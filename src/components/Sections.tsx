@@ -1,3 +1,5 @@
+import { confirmedLocation } from "../data/location";
+import { experience } from "../data/experience";
 import { useSettings } from "../settings";
 import { Leaf } from "./Leaf";
 import { Link } from "react-router-dom";
@@ -56,7 +58,8 @@ export function Rooms({ rooms }: { rooms: Room[] }) {
   );
 }
 export function Menu({ items }: { items: MenuItem[] }) {
-  const { t } = usePreferences();
+  const { t, lang } = usePreferences();
+  const c = experience[lang];
   return (
     <section id="menyu" className="section menu-section">
       <div className="section-heading">
@@ -66,9 +69,10 @@ export function Menu({ items }: { items: MenuItem[] }) {
         </Link>
         <span className="heading-rule" />
       </div>
+      <p className="section-description">{c.selectionText}</p>
       {items.length ? (
         <div className="content-grid">
-          {items.slice(0, 3).map((item) => (
+          {[...items.slice(0, 5), ...items.filter(item => item.id === "achchiq-chuchuk")].map((item) => (
             <MenuCard key={item.id} item={item} />
           ))}
         </div>
@@ -170,9 +174,10 @@ export function Contact() {
         <h3>{t.visit}</h3>
         <p>{t.locationText}</p>
         <span className="location-address">{address}</span>
-        {settings.mapUrl && <a className="button outline" href={settings.mapUrl} target="_blank" rel="noopener noreferrer">{t.location}</a>}
+        {settings.mapUrl && <a className="button outline" href={settings.mapUrl} target="_blank" rel="noopener noreferrer">{lang === "uz" ? "Yo‘l olish" : lang === "ru" ? "Маршрут" : "Get directions"} ↗</a>}
         {settings.telegramUrl && <a className="button outline" href={settings.telegramUrl} target="_blank" rel="noopener noreferrer">Telegram</a>}
         {settings.instagramUrl && <a className="button outline" href={settings.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>}
+        <iframe className="contact-map" title={lang === "uz" ? "Choyxona xaritada" : lang === "ru" ? "Чайхана на карте" : "Teahouse location"} src={`https://maps.google.com/maps?q=${confirmedLocation.latitude},${confirmedLocation.longitude}&z=16&output=embed`} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
         <Leaf />
       </div>
     </section>

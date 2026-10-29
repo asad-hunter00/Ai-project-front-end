@@ -1,3 +1,4 @@
+import { confirmedLocation } from "../data/location";
 import type { Settings, SiteContent, Announcement } from "../types";
 import { initialContent } from "../data/content";
 const base =
@@ -109,10 +110,10 @@ export async function loadSiteContent(
   if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
   return {
     ...initialContent,
-    settings:
-      settings.status === "fulfilled"
-        ? settings.value
-        : initialContent.settings,
+    settings: {
+      ...(settings.status === "fulfilled" ? settings.value : initialContent.settings),
+      ...confirmedLocation,
+    },
     announcements:
       announcements.status === "fulfilled" ? announcements.value : [],
     loadWarning:

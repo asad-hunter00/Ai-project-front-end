@@ -76,20 +76,12 @@ export const translations = {
     gallerySoon: "Choyxonamiz suratlari tez orada qo‘shiladi",
     galleryText: "Haqiqiy xonalarimiz va muhitimizni shu yerda ko‘rsatamiz.",
     faqTitle: "Tez-tez so‘raladigan savollar",
-    faqQ: [
-      "Xonalarga necha kishi joylashishi mumkin?",
-      "Ish vaqti qanday?",
-      "Manzilingiz qayerda joylashgan?",
-    ],
-    faqA: [
-      "20 ta xonamiz bor. Har bir xona 10 kishiga mo‘ljallangan.",
-      "Ish vaqtimiz 09:00–23:50. Yakshanba kuni ham ishlaymiz. Ayrim chorshanbalarda dam beriladi; kelishdan oldin telefon orqali aniqlashtiring.",
-      "Jizzax shahri, Eron zapravkasi oldida. Qo‘shimcha ma’lumot uchun bizga qo‘ng‘iroq qiling.",
-    ],
+    faqQ: ["Choyxona qayerda joylashgan?", "Ish vaqti qanday?", "Yakshanba kuni ochiqmi?", "Chorshanba doim dam olish kunimi?", "Xonalarga nechta odam sig‘adi?", "Xonalarda qanday qulayliklar bor?", "Menyuni telefondan ko‘rsa bo‘ladimi?", "Saytdan taom buyurtma yoki xona bron qilish mumkinmi?", "Go‘shtning manbasi va taom tarkibini qanday bilaman?", "Narx va porsiyani qanday aniqlashtiraman?"],
+    faqA: ["Sarvar Azimov ko‘chasi 47, 131100, Jizzax, Jizzax viloyati, O‘zbekiston. Aniq yo‘lni telefon orqali so‘rashingiz mumkin.", "09:00 dan 23:50 gacha. Tashrifdan oldin shu kundagi ish tartibini aniqlashtiring.", "Ha, yakshanba kunlari ham ishlaydi.", "Yo‘q. Faqat ayrim chorshanbalarda dam beriladi. Kelishdan oldin telefon orqali aniqlashtiring.", "20 ta xona bor. Har bir xona 10 kishiga mo‘ljallangan.", "Shinam mebellar va konditsioner mavjud.", "Ha. /menu sahifasida taomlarni ko‘ring, nomi bo‘yicha qidiring va kategoriyani tanlang.", "Sayt tanishish uchun. Unda onlayn bron yoki buyurtma yo‘q. Taom buyurtmasi xodim orqali beriladi.", "Taom kartochkasini oching. Yetkazib beruvchi, aniq tarkib yoki allergenlar haqida ma’lumot bo‘lmasa, xodimdan so‘rang.", "Hali ko‘rsatilmagan narx va porsiyalarni xodimdan telefon orqali yoki tashrif vaqtida so‘rang."],
     contactTitle: "Aloqa",
     contactText:
       "Xonalar va ish tartibi haqida ma’lumot olish uchun qo‘ng‘iroq qiling.",
-    address: "Jizzax shahri, Eron zapravkasi oldida",
+    address: "Sarvar Azimov ko‘chasi 47, 131100, Jizzax, Jizzax viloyati, O‘zbekiston",
     hours: "Ish vaqti",
     schedule:
       "Yakshanba kuni ham ishlaymiz. Ayrim chorshanbalarda dam beriladi. Kelishdan oldin telefon orqali aniqlashtiring.",
@@ -176,19 +168,11 @@ export const translations = {
     galleryText:
       "Здесь мы покажем настоящие комнаты и атмосферу нашей чайханы.",
     faqTitle: "Часто задаваемые вопросы",
-    faqQ: [
-      "Сколько человек помещается в комнатах?",
-      "Какое у вас время работы?",
-      "Где вы находитесь?",
-    ],
-    faqA: [
-      "У нас 20 комнат. Каждая рассчитана на 10 человек.",
-      "Мы работаем с 09:00 до 23:50, в том числе по воскресеньям. В отдельные среды бывают выходные; уточните по телефону перед визитом.",
-      "Город Джизак, перед заправкой Eron. За дополнительной информацией позвоните нам.",
-    ],
+    faqQ: ["Где находится чайхана?", "Какое у вас время работы?", "Вы открыты в воскресенье?", "Каждая среда — выходной?", "Сколько человек вмещают комнаты?", "Какие удобства есть в комнатах?", "Можно ли посмотреть меню на телефоне?", "Можно ли заказать еду или забронировать комнату на сайте?", "Как узнать происхождение мяса и состав блюда?", "Как уточнить цену и размер порции?"],
+    faqA: ["Узбекистан, Джизакская область, Джизак, улица Сарвара Азимова, 47, 131100. Подробный маршрут уточните по телефону.", "С 09:00 до 23:50. Перед визитом уточните режим работы на этот день.", "Да, чайхана работает и по воскресеньям.", "Нет. Выходными бывают только отдельные среды. Перед визитом позвоните.", "В чайхане 20 комнат, каждая рассчитана на 10 человек.", "Удобная мебель и кондиционер.", "Да. На странице /menu есть поиск блюд и фильтр по категориям.", "Сайт предназначен для ознакомления. Онлайн-заказа и бронирования нет. Заказы принимает сотрудник.", "Откройте карточку блюда. Если поставщик, состав или аллергены не указаны, уточните их у сотрудника.", "Неуказанные цены и порции уточните по телефону или во время визита."],
     contactTitle: "Контакты",
     contactText: "Позвоните нам, чтобы узнать о комнатах и графике работы.",
-    address: "Город Джизак, перед заправкой Eron",
+    address: "Узбекистан, Джизакская область, Джизак, улица Сарвара Азимова, 47, 131100",
     hours: "Время работы",
     schedule:
       "Работаем и по воскресеньям. В отдельные среды бывают выходные. Перед визитом уточните по телефону.",
@@ -274,19 +258,11 @@ export const translations = {
     gallerySoon: "Photos of our teahouse are coming soon",
     galleryText: "We will share real photos of our rooms and atmosphere here.",
     faqTitle: "Frequently asked questions",
-    faqQ: [
-      "How many guests can each room accommodate?",
-      "What are your opening hours?",
-      "Where are you located?",
-    ],
-    faqA: [
-      "We have 20 rooms. Each room accommodates 10 guests.",
-      "We are open from 09:00 to 23:50, including Sundays. We close on some Wednesdays; please call before visiting to confirm.",
-      "Jizzakh city, in front of Eron petrol station. Please call us for more information.",
-    ],
+    faqQ: ["Where is the teahouse?", "What are the opening hours?", "Are you open on Sundays?", "Is every Wednesday a day off?", "How many people do the rooms seat?", "What amenities do the rooms have?", "Can I browse the menu on my phone?", "Can I order food or book a room on the website?", "How can I check meat origin and ingredients?", "How do I check prices and portion sizes?"],
+    faqA: ["47 Sarvar Azimov Street, Jizzakh, Jizzakh Region, Uzbekistan, 131100. Call for detailed directions.", "09:00–23:50. Please confirm the schedule for your visit.", "Yes, the teahouse also opens on Sundays.", "No. Only some Wednesdays are days off. Please call before visiting.", "There are 20 rooms, each seating 10 people.", "Comfortable furniture and air conditioning.", "Yes. Visit /menu to search dishes and filter by category.", "The website is for browsing. There is no online ordering or booking. Staff take food orders.", "Open the dish details. If supplier, ingredients or allergens are not listed, please ask the staff.", "Ask staff by phone or during your visit about prices and portions that are not listed."],
     contactTitle: "Contact",
     contactText: "Call us for information about the rooms and opening hours.",
-    address: "Jizzakh city, in front of Eron petrol station",
+    address: "47 Sarvar Azimov Street, 131100, Jizzakh, Jizzakh Region, Uzbekistan",
     hours: "Opening hours",
     schedule:
       "Open on Sundays. We close on some Wednesdays. Please call before visiting to confirm.",
