@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { usePreferences, type Language } from "../i18n";
+import { useSettings } from "../settings";
 import { Icon } from "./Icon";
 export const sectionIds = [
   "bosh",
@@ -14,12 +15,12 @@ export const sectionTarget = (id: string) =>
   id === "menyu" ? "/menu" : id === "galereya" ? "/gallery" : `/#${id}`;
 export const phoneHref = (p: string) => `tel:${p.replace(/\s/g, "")}`;
 export function Brand() {
-  const { t } = usePreferences();
+  const settings = useSettings();
   return (
     <Link className="brand" to="/">
       <img
         src="/images/oktam-ota-logo.png"
-        alt={t.brand}
+        alt={settings.name}
         width="707"
         height="353"
       />

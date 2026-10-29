@@ -30,11 +30,11 @@ export function HomePage({
         <div className="hero-shade" />
         <div className="hero-inner">
           <div className="hero-copy">
-            <span className="eyebrow">{t.tag}</span>
+            <span className="eyebrow">{content.settings.name}</span>
             <h1>{t.heroTitle}</h1>
             <p>{t.heroText}</p>
             <div className="hero-actions">
-              <a className="button primary" href="tel:+998915672815">
+              <a className="button primary" href={`tel:${content.settings.phones[0].replace(/[^+\d]/g, "")}`}>
                 <Icon name="phone" />
                 {t.call}
               </a>

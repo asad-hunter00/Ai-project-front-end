@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { SettingsContext } from "./settings";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { RouteEffects } from "./components/RouteEffects";
@@ -21,7 +22,7 @@ export default function App() {
     loadSiteContent(controller.signal)
       .then((data) => {
         setContent(data);
-        setStatus("idle");
+        setStatus(data.loadWarning ? "error" : "idle");
       })
       .catch(() => {
         if (!controller.signal.aborted) setStatus("error");
@@ -29,6 +30,7 @@ export default function App() {
     return () => controller.abort();
   }, []);
   return (
+    <SettingsContext.Provider value={content.settings}>
     <BrowserRouter>
       <RouteEffects />
       <a className="skip-link" href="#main">
@@ -51,5 +53,6 @@ export default function App() {
       </main>
       <Footer phones={content.settings.phones} />
     </BrowserRouter>
+    </SettingsContext.Provider>
   );
 }

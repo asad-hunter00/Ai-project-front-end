@@ -1,3 +1,4 @@
+import { useSettings } from "../settings";
 import { Leaf } from "./Leaf";
 import { Link } from "react-router-dom";
 import { MenuCard } from "./MenuCard";
@@ -7,6 +8,7 @@ import { usePreferences } from "../i18n";
 import { Icon, RoomDrawing } from "./Icon";
 export function Rooms({ rooms }: { rooms: Room[] }) {
   const { t, lang } = usePreferences();
+  const settings = useSettings();
   const published = rooms.filter((r) => r.published);
   return (
     <section id="xonalar" className="section rooms">
@@ -22,7 +24,7 @@ export function Rooms({ rooms }: { rooms: Room[] }) {
             </li>
           ))}
         </ul>
-        <a className="button outline" href="tel:+998915672815">
+        <a className="button outline" href={`tel:${settings.phones[0].replace(/[^+\d]/g, "")}`}>
           {t.askRooms}
           <Icon name="arrow" />
         </a>
@@ -105,8 +107,8 @@ export function Announcements({ items }: { items: Announcement[] }) {
       <h2>{t.announcements}</h2>
       {active.map((i) => (
         <article key={i.id}>
-          <h3>{i.title[lang]}</h3>
-          <p>{i.text[lang]}</p>
+          <h3 lang={i.title[lang] ? lang : "uz"}>{i.title[lang] || i.title.uz}</h3>
+          <p lang={i.text[lang] ? lang : "uz"}>{i.text[lang] || i.text.uz}</p>
         </article>
       ))}
     </section>
@@ -135,7 +137,9 @@ export function FAQ() {
   );
 }
 export function Contact() {
-  const { t } = usePreferences();
+  const { t, lang } = usePreferences();
+  const settings = useSettings();
+  const address = lang === "uz" ? settings.address : t.address;
   return (
     <section id="aloqa" className="contact section">
       <div>
@@ -144,31 +148,31 @@ export function Contact() {
         <address>
           <div>
             <Icon name="pin" />
-            <span>{t.address}</span>
+            <span>{address}</span>
           </div>
           <div>
             <Icon name="clock" />
             <span>
-              <span className="sr-only">{t.hours}: </span>09:00–23:50
+              <span className="sr-only">{t.hours}: </span>{settings.hours}
             </span>
           </div>
-          <a href="tel:+998915672815">
-            <Icon name="phone" />
-            +998 91 567 28 15
-          </a>
-          <a href="tel:+998904869611">
-            <Icon name="phone" />
-            +998 90 486 96 11
-          </a>
+          {settings.phones.map(phone => (
+            <a key={phone} href={`tel:${phone.replace(/[^+\d]/g, "")}`}>
+              <Icon name="phone" />{phone}
+            </a>
+          ))}
         </address>
-        <p className="schedule">{t.schedule}</p>
+        <p className="schedule">{lang === "uz" ? (settings.scheduleNotes ?? t.schedule) : t.schedule}</p>
       </div>
       <div className="location-card">
         <span className="eyebrow">{t.location}</span>
         <Icon name="pin" />
         <h3>{t.visit}</h3>
         <p>{t.locationText}</p>
-        <span className="location-address">{t.address}</span>
+        <span className="location-address">{address}</span>
+        {settings.mapUrl && <a className="button outline" href={settings.mapUrl} target="_blank" rel="noopener noreferrer">{t.location}</a>}
+        {settings.telegramUrl && <a className="button outline" href={settings.telegramUrl} target="_blank" rel="noopener noreferrer">Telegram</a>}
+        {settings.instagramUrl && <a className="button outline" href={settings.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>}
         <Leaf />
       </div>
     </section>

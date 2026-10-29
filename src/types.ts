@@ -37,8 +37,14 @@ export interface Settings {
   address: string;
   hours: string;
   phones: string[];
+  description?: string;
+  scheduleNotes?: string;
+  mapUrl?: string | null;
+  telegramUrl?: string | null;
+  instagramUrl?: string | null;
 }
 export interface SiteContent {
+  loadWarning?: boolean;
   settings: Settings;
   rooms: Room[];
   gallery: GalleryImage[];

@@ -1,3 +1,4 @@
+import { useSettings } from "../settings";
 import { Link } from "react-router-dom";
 import {
   Brand,
@@ -8,7 +9,8 @@ import {
 } from "./Header";
 import { usePreferences } from "../i18n";
 export function Footer({ phones }: { phones: string[] }) {
-  const { t } = usePreferences();
+  const { t, lang } = usePreferences();
+  const settings = useSettings();
   return (
     <>
       <div className="pattern-divider" aria-hidden="true" />
@@ -33,9 +35,9 @@ export function Footer({ phones }: { phones: string[] }) {
         </div>
         <div className="footer-bottom">
           <span>
-            © {new Date().getFullYear()} {t.brand}. {t.copyright}
+            © {new Date().getFullYear()} {settings.name}. {t.copyright}
           </span>
-          <span>{t.address}</span>
+          <span>{lang === "uz" ? settings.address : t.address}</span>
           <Link to="/#bosh">{t.up} ↑</Link>
         </div>
       </footer>
